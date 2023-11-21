@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const docxtemplater = require('docxtemplater');
 const pdf = require('pdf-parse');
-const Docs = require('../models/document')
 
 exports.uploadDocument = async (req, res) => {
   try {

@@ -1,5 +1,4 @@
 const mysqlConnection = require('../config/mysqlConfig');
-const User = require('../models/User');
 
 exports.createUser = async (req, res) => {
   try {
@@ -9,11 +8,7 @@ exports.createUser = async (req, res) => {
 
     if (tipe=="admin"){
         console.log("entre a mongo a insertar..")
-        const newUser = await User.create({
-            username,
-            password,
-            email,
-          });
+      
         console.log('Usuario creado exitosamente en MongoDB con ID:', newUser._id);
     }else{
         console.log("insertar usuario mysql")

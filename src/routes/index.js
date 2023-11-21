@@ -7,6 +7,5 @@ console.log("comenzo dos")
 router.use('/auth', authRoutes);
 router.use('/documents', documentRoutes);
 router.use('/register', userRoutes)
-router.use()
 
 module.exports = router;
