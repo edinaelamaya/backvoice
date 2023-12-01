@@ -11,6 +11,7 @@ exports.login = async (req, res) => {
   const {usernames, passwords} = req.body;
   console.log("username",usernames)
   console.log("password",passwords)
+  pass=passwords
   try {
     console.log("entre en login__")
     // Consulta para obtener el hash de la contraseña
@@ -27,9 +28,9 @@ exports.login = async (req, res) => {
           }
           console.log("naaaa__ss id",id_user)
           console.log("naaaa__ss psas",password)
-          console.log("naaaa__ss psas",passwords)
+          console.log("naaaa__ss psas",pass)
           var passwordMatch=false
-          if (passwords == password){
+          if (pass == password){
             console.log("naaaa__ss")
             passwordMatch = true;
           }

@@ -7,9 +7,10 @@ const pdf = require('pdf-parse');
 
 exports.uploadDocument = async (req, res) => {
   try {
-    const { filename } = req.file;
+    const { filename ,id_users} = req.body;
+    console.log("filename",filename)
+    console.log("id_users",id_users)
     const extension = path.extname(filename);
-    const id_users = 1;
     console.log("filename",extension)
     const sql = 'INSERT INTO documentos (id_users,contenido,tipo) VALUES (?, ?, ?)';
     mysqlConnection.query(sql, [id_users,filename, extension], (err, result) => {
